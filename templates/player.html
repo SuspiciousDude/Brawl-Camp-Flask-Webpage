@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Player Data</title>
+    <link rel="stylesheet" href="\static\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 id="title">Brawl Stars Profile Tracker</h1>
+    {% if not player_data %}
+        <!-- Add a form to input the player tag -->
+        <div id="tag-input">
+            <form action="{{ url_for('player') }}" method="get">
+                <label for="playerTag" id="tag-txt">Enter Player Tag:</label>
+                <input type="text" id="playerTag" name="tag" required>
+                <button type="submit" id="tag-submit">Stats</button>
+            </form>
+        </div>
+    {% endif %}
+
+    <!-- Display player data -->
+    {% if player_data %}
+        <h1 id="player-profile">Profile: {{ player_data.name }}</h1>
+        <h2 id="player-trophies">Trophies: {{ player_data.trophies }}</h2>
+        <!-- Add more details as needed -->
+        {% for brawler in player_data.brawlers %}
+        <div id="brawler-container">
+            <div id="brawler-image">
+                <img src="{{ brawler.icon_url }}" alt="{{ brawler.name }} Portrait" style="width: 100%;" id="brawler-portrait">
+            </div>
+            <div id="brawler-name">
+                <p>{{ brawler.name }}</p>
+            </div>
+            <div id="brawler-power">
+                <p>({{ brawler.power }})</p>
+            </div>
+            <div id="brawler-trophies-current">
+                <p>Current Trophies {{ brawler.trophies }}</p>
+            </div>
+            <div id="brawler-trophies-highest">
+                <p>Highest Trophies {{ brawler.highestTrophies }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>

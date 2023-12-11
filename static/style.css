@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Lilita One', sans-serif;
+}
+
+#title{
+    text-align: center;
+    font-weight: lighter;
+}
+
+#player-profile, #player-trophies{
+    text-align: center;
+    font-weight: lighter;
+}
+
+#player-profile{
+    color: #4DDBA2;
+}
+
+#tag-input{
+    width: 25.5vw;
+    position: relative;
+    left: 36.5vw;
+    top: 2vh;
+}
+
+#brawler-container{
+    display: flex;
+    width: 75%;
+    margin: 2vw;
+    align-items: center;
+    margin-left: 25%;
+    border-radius: 1%;
+}
+
+::selection{
+    background-color: rgba(255, 255, 255, 0.945);
+    color: rgba(0, 0, 0, 0.726);
+}
+
+#brawler-image{
+    width: 10%;
+}
+
+#brawler-portrait{
+    border-radius: 50%;
+}
+
+#brawler-name{
+    margin-left: 20px;
+    width: 8%;
+    text-align: center;
+    font-size: x-large;
+}
+
+#brawler-power{
+    text-align: center;
+    width: 4%;
+    font-size: medium;
+    margin-left: 4%;
+}
+
+#brawler-trophies-current, #brawler-trophies-highest{
+    position: relative;
+    margin-left: 5%;
+    width: 15%;
+    text-align: center;
+    font-size: large;
+    font-weight: lighter;
+}
